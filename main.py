@@ -16,7 +16,7 @@
 import pandas
 
 # Reading the csv file with pandas
-data = pandas.read_csv("weather_data.csv")
+# data = pandas.read_csv("weather_data.csv")
 
 # # using pandas to change the csv to a dict
 # data_dict = data.to_dict()
@@ -53,18 +53,26 @@ data = pandas.read_csv("weather_data.csv")
 # print(monday_temp_F)
 
 # Create a dataframe from scratch
-
-data_dict = {
-    "students": ["Amy", "James", "Angela"],
-    "scores": [76, 56, 65]
-}
-
-data = pandas.DataFrame(data_dict)
-data.to_csv("new_data.csv")
-
-print(data)
+#
+# data_dict = {
+#     "students": ["Amy", "James", "Angela"],
+#     "scores": [76, 56, 65]
+# }
+#
+# data = pandas.DataFrame(data_dict)
+# data.to_csv("new_data.csv")
+#
+# print(data)
 
 
 # print(type(data))
 # print(data["temp"])
 # print(data)
+
+# Reads the data from the squirrel census and then adds up all the different colors of squirrels
+squirrel_data = pandas.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
+
+squirrel_color = squirrel_data["Primary Fur Color"].value_counts()
+
+# prints results to a csv.
+squirrel_color.to_csv("squirrel_count")
